@@ -47,9 +47,11 @@ function printOutput(value: any) {
 }
 
 // Generics
-function insertAtBeginning(array: any[], value: any) {
+function insertAtBeginning<T>(array: T[], value: T) {
   const newArray = [value, ...array];
   return newArray;
 }
 const demoArray = [1, 2, 3, 4];
-const updatetArray = insertAtBeginning(demoArray, -1);
+const updatetArray = insertAtBeginning(demoArray, -1); // [-1, 1, 2, 3,]
+const stringsArray = insertAtBeginning(['a', 'b', 'c'], 'd');
+updatetArray[0].split('');
